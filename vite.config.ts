@@ -26,7 +26,6 @@ export default defineConfig({
           rollupOptions: {
                input: {
                     index: path.resolve(__dirname, "index.html"),
-                    subpage: path.resolve(__dirname, "subpage.html"),
                }
           },
           outDir: "factory-front"
@@ -36,5 +35,5 @@ export default defineConfig({
                '@': path.resolve(__dirname, './src'),
           },
      },
-     base: "/"
+     base: 'SignatureSystem/',
 })
