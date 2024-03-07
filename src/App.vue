@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-// 修改12
+import {  RouterView } from 'vue-router'
+// 修改123
 </script>
 
 <template>
