@@ -22,6 +22,8 @@
     "qs": "^6.10.2",
     "sass": "^1.48.0",
     "smooth-signature": "^1.0.13",
+    "unplugin-auto-import": "^0.17.5",
+    "unplugin-vue-components": "^0.26.0",
     "v-preview-image": "^3.0.9",
     "video.js": "^7.20.3",
     "videojs-contrib-hls": "^5.15.0",

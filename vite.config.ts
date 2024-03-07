@@ -1,39 +1,25 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import { viteCommonjs } from "@originjs/vite-plugin-commonjs";
-import path from 'path'
-// https://vitejs.dev/config/
+import AutoImport from 'unplugin-auto-import/vite'
+import Components from 'unplugin-vue-components/vite'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import path from "path"
+// https://vitejs.dev/config
 export default defineConfig({
-     plugins: [vue(), viteCommonjs()],
-     css: {
-          preprocessorOptions: {
-               scss: {
-                    additionalData: `
-          @import "./src/scss/fontface.scss";
-          @import "./src/scss/scrollbar.scss";
-        `
-               }
-          }
-     },
-     server: {
-          host: '0.0.0.0',
-          port: 8080,
-     },
-     build: {
-          commonjsOptions: {
-               include: /node_modules|superapi/
-          },
-          rollupOptions: {
-               input: {
-                    index: path.resolve(__dirname, "index.html"),
-               }
-          },
-          outDir: "factory-front"
-     },
+     plugins: [
+          vue(),
+          AutoImport({
+               resolvers: [ElementPlusResolver()],
+          }),
+          Components({
+               resolvers: [ElementPlusResolver()],
+          }),
+     ],
      resolve: {
           alias: {
-               '@': path.resolve(__dirname, './src'),
-          },
+               '@': path.resolve(__dirname, 'src'),
+          }
      },
-     base: 'SignatureSystem/',
+     base: 'hhf_personal/',
+     // publicPath: process.env.NODE_ENV === "production" ? "/vue-running" : "/",
 })
