@@ -20,6 +20,6 @@ export default defineConfig({
                '@': path.resolve(__dirname, 'src'),
           }
      },
-     base: 'hhf_personal/',
+     base: 'SignatureSystem/',
      // publicPath: process.env.NODE_ENV === "production" ? "/vue-running" : "/",
 })
